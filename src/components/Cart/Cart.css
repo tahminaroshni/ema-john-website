@@ -1,0 +1,9 @@
+.cart p {
+  margin: 0;
+  font-weight: 500;
+  color: #222;
+}
+
+.btn-regular.review-btn {
+  padding: 5px 45px;
+}
