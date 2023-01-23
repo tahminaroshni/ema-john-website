@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { clearLocalStorage, removeFromLocalStorage } from '../../utilities/addToLocalStorage';
+import { removeFromLocalStorage } from '../../utilities/addToLocalStorage';
 import Cart from '../Cart/Cart';
 import useCart from '../hooks/useCart';
 import ReviewItem from '../ReviewItem/ReviewItem';
@@ -21,15 +21,15 @@ const OrderReview = () => {
     removeFromLocalStorage(key);
   }
 
-  const handlePlaceOrder = () => {
-    clearLocalStorage();
-    setCarts([]);
-    navigate('/place-order');
+  const handleProceedToShipping = () => {
+    // clearLocalStorage();
+    // setCarts([]);
+    navigate('/shipping');
   }
 
 
   useEffect(() => {
-    fetch('products.JSON')
+    fetch('products.json')
       .then(res => res.json())
       .then(data => setProducts(data))
   }, [])
@@ -44,8 +44,8 @@ const OrderReview = () => {
       <div className="cart-container">
         <Cart carts={carts}>
           <button
-            onClick={() => handlePlaceOrder()}
-            className='btn-regular review-btn'>Place Order</button>
+            onClick={() => handleProceedToShipping()}
+            className='btn-regular review-btn'>Proceed to Shipping</button>
         </Cart>
       </div>
     </div>

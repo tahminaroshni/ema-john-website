@@ -15,7 +15,7 @@ const Shop = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('products.JSON')
+    fetch('products.json')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
@@ -31,14 +31,11 @@ const Shop = () => {
       const restCart = carts.filter(cart => cart.key !== product.key);
       productExists.quantity = productExists.quantity + 1;
       newCart = [...restCart, productExists];
-      // console.log(newCart);
     }
     else {
       product.quantity = 1;
       newCart = [...carts, product];
-      // console.log(newCart);
     }
-    // const newCart = [...carts, product];
     setCarts(newCart);
 
     // Add data to local storage

@@ -1,0 +1,9 @@
+.signin {
+  display: flex;
+  flex-direction: column;
+  margin: 0 450px;
+}
+
+.signin .input {
+  height: 30px;
+}
